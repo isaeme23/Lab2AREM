@@ -11,23 +11,32 @@ import java.util.Map;
 public class SparkHandler {
 
     // Variable de la clase usada para almacenar los servicios
-    private static final Map<String, StringService> servicios = new HashMap<>();
+    private static final Map<String, StringService> serviciosGET = new HashMap<>();
+    private static final Map<String, StringService> serviciosPOST = new HashMap<>();
 
     /**
      * Metodo usado para buscar servicios creados
      * @param nombre Nombre del servicio a buscar
      * @return Interfaz funcional del servicio
      */
-    public static StringService buscar(String nombre) {
-        return servicios.get(nombre);
+    public static StringService buscar(String nombre, String verbo) {
+        if (verbo.equals("GET")){
+            return serviciosGET.get(nombre);
+        } else{
+            return serviciosPOST.get(nombre);
+        }
     } // Cierre del metodo
 
     /**
-     * Metodo usado para crrear servicios a partir de funciones lambda
+     * Metodo usado para crear servicios a partir de funciones lambda
      * @param str Nombre del servicio a crear
      * @param service Interfaz funcional del servicio
      */
     public static void get(String str, StringService service){
-        servicios.put(str, service);
+        serviciosGET.put(str, service);
     } // Cierre del metodo
+
+    public static void post(String str, StringService service){
+        serviciosPOST.put(str, service);
+    }
 } // Cierre de la clase

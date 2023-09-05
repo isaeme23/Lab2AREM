@@ -91,3 +91,20 @@ border-radius: 15px;
 .poster{
     float: left;
 }
+
+.respuesta1{
+    margin: 1050px 100px 45px;
+    right: 20%
+    float left;
+}
+
+.poster1{
+    float: left;
+}
+
+.aremflix1{
+    margin: 400px 100px 45px;
+    position: absolute;
+    left: 30%;
+    right: 50%;
+}

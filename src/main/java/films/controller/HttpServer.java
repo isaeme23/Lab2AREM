@@ -71,7 +71,7 @@ public class HttpServer {
 
 
             if(path.contains("?")) {
-                buscar("/movie").response(path.split("=")[1], clientSocket);
+                buscar("/movie", "GET").response(path.split("=")[1], clientSocket);
             }else if (path.endsWith(".html") || path.endsWith(".css") || path.endsWith(".js")) {
                 mediatory = new TextMediatory(path, clientSocket);
                 mediatory.reply();
